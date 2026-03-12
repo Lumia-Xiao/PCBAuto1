@@ -5,20 +5,28 @@
   ],
   "summary": {
     "total_nets": 34,
-    "routed_nets": 16,
-    "total_segments": 128,
-    "total_vias": 0
+    "routed_nets": 34,
+    "total_segments": 278,
+    "total_vias": 105
   },
   "nets": {
     "D+5V_U9": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "D+5V_U9",
           "layer": "L1_TOP",
           "x1": 56.75,
           "y1": 41.5,
-          "x2": 55.5,
+          "x2": 57.0,
+          "y2": 41.5
+        },
+        {
+          "net": "D+5V_U9",
+          "layer": "L4_BOTTOM",
+          "x1": 57.0,
+          "y1": 41.5,
+          "x2": 56.5,
           "y2": 41.5
         },
         {
@@ -27,7 +35,15 @@
           "x1": 57.5,
           "y1": 48.25,
           "x2": 57.5,
-          "y2": 49.0
+          "y2": 48.0
+        },
+        {
+          "net": "D+5V_U9",
+          "layer": "L4_BOTTOM",
+          "x1": 57.5,
+          "y1": 48.0,
+          "x2": 57.5,
+          "y2": 48.5
         },
         {
           "net": "D+5V_U9",
@@ -35,11 +51,111 @@
           "x1": 60.5,
           "y1": 48.25,
           "x2": 60.5,
-          "y2": 49.0
+          "y2": 48.0
+        },
+        {
+          "net": "D+5V_U9",
+          "layer": "L4_BOTTOM",
+          "x1": 60.5,
+          "y1": 48.0,
+          "x2": 60.5,
+          "y2": 48.5
+        },
+        {
+          "net": "D+5V_U9",
+          "layer": "L1_TOP",
+          "x1": 56.5,
+          "y1": 41.5,
+          "x2": 57.0,
+          "y2": 41.5
+        },
+        {
+          "net": "D+5V_U9",
+          "layer": "L1_TOP",
+          "x1": 57.0,
+          "y1": 41.5,
+          "x2": 57.0,
+          "y2": 42.0
+        },
+        {
+          "net": "D+5V_U9",
+          "layer": "L1_TOP",
+          "x1": 57.0,
+          "y1": 42.0,
+          "x2": 57.5,
+          "y2": 42.0
+        },
+        {
+          "net": "D+5V_U9",
+          "layer": "L1_TOP",
+          "x1": 57.5,
+          "y1": 42.0,
+          "x2": 57.5,
+          "y2": 43.5
+        },
+        {
+          "net": "D+5V_U9",
+          "layer": "L4_BOTTOM",
+          "x1": 58.0,
+          "y1": 43.5,
+          "x2": 58.0,
+          "y2": 44.5
+        },
+        {
+          "net": "D+5V_U9",
+          "layer": "L4_BOTTOM",
+          "x1": 58.0,
+          "y1": 44.5,
+          "x2": 57.5,
+          "y2": 44.5
+        },
+        {
+          "net": "D+5V_U9",
+          "layer": "L1_TOP",
+          "x1": 57.5,
+          "y1": 48.5,
+          "x2": 60.5,
+          "y2": 48.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "D+5V_U9",
+          "x": 57.0,
+          "y": 41.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "D+5V_U9",
+          "x": 57.5,
+          "y": 48.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "D+5V_U9",
+          "x": 60.5,
+          "y": 48.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "D+5V_U9",
+          "x": 58.0,
+          "y": 43.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "D+5V_U9",
+          "x": 57.5,
+          "y": 48.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 5
     },
     "AGND_U9": {
       "routed": true,
@@ -49,7 +165,7 @@
           "layer": "L1_TOP",
           "x1": 64.25,
           "y1": 41.5,
-          "x2": 65.5,
+          "x2": 64.5,
           "y2": 41.5
         },
         {
@@ -58,7 +174,7 @@
           "x1": 57.5,
           "y1": 46.75,
           "x2": 57.5,
-          "y2": 46.0
+          "y2": 46.5
         },
         {
           "net": "AGND_U9",
@@ -66,45 +182,60 @@
           "x1": 60.5,
           "y1": 46.75,
           "x2": 60.5,
-          "y2": 46.0
+          "y2": 46.5
         },
         {
           "net": "AGND_U9",
           "layer": "L1_TOP",
-          "x1": 131.0,
-          "y1": 83.0,
-          "x2": 121.0,
-          "y2": 83.0
+          "x1": 64.5,
+          "y1": 41.5,
+          "x2": 64.5,
+          "y2": 42.0
         },
         {
           "net": "AGND_U9",
           "layer": "L1_TOP",
-          "x1": 121.0,
-          "y1": 83.0,
-          "x2": 121.0,
-          "y2": 92.0
+          "x1": 64.5,
+          "y1": 42.0,
+          "x2": 60.5,
+          "y2": 42.0
         },
         {
           "net": "AGND_U9",
           "layer": "L1_TOP",
-          "x1": 121.0,
-          "y1": 92.0,
-          "x2": 115.0,
-          "y2": 92.0
+          "x1": 60.5,
+          "y1": 46.5,
+          "x2": 57.5,
+          "y2": 46.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "AGND_U9",
+          "x": 60.5,
+          "y": 43.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "AGND_U9",
+          "x": 60.5,
+          "y": 46.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 2
     },
     "3V3_U11": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "3V3_U11",
           "layer": "L1_TOP",
           "x1": 67.25,
           "y1": 42.5,
-          "x2": 66.0,
+          "x2": 66.5,
           "y2": 42.5
         },
         {
@@ -121,37 +252,151 @@
           "x1": 72.0,
           "y1": 47.75,
           "x2": 72.0,
-          "y2": 47.0
+          "y2": 48.0
+        },
+        {
+          "net": "3V3_U11",
+          "layer": "L4_BOTTOM",
+          "x1": 72.0,
+          "y1": 48.0,
+          "x2": 72.0,
+          "y2": 47.5
         },
         {
           "net": "3V3_U11",
           "layer": "L1_TOP",
-          "x1": 132.0,
-          "y1": 85.0,
-          "x2": 128.0,
-          "y2": 85.0
+          "x1": 64.0,
+          "y1": 46.5,
+          "x2": 64.0,
+          "y2": 47.5
+        },
+        {
+          "net": "3V3_U11",
+          "layer": "L4_BOTTOM",
+          "x1": 65.5,
+          "y1": 52.5,
+          "x2": 71.0,
+          "y2": 52.5
+        },
+        {
+          "net": "3V3_U11",
+          "layer": "L4_BOTTOM",
+          "x1": 71.0,
+          "y1": 52.5,
+          "x2": 71.0,
+          "y2": 47.5
         },
         {
           "net": "3V3_U11",
           "layer": "L1_TOP",
-          "x1": 128.0,
-          "y1": 85.0,
-          "x2": 128.0,
-          "y2": 93.0
+          "x1": 66.5,
+          "y1": 42.5,
+          "x2": 65.0,
+          "y2": 42.5
+        },
+        {
+          "net": "3V3_U11",
+          "layer": "L1_TOP",
+          "x1": 65.0,
+          "y1": 42.5,
+          "x2": 65.0,
+          "y2": 43.0
+        },
+        {
+          "net": "3V3_U11",
+          "layer": "L4_BOTTOM",
+          "x1": 64.0,
+          "y1": 43.0,
+          "x2": 64.0,
+          "y2": 43.5
+        },
+        {
+          "net": "3V3_U11",
+          "layer": "L4_BOTTOM",
+          "x1": 64.0,
+          "y1": 43.5,
+          "x2": 63.5,
+          "y2": 43.5
+        },
+        {
+          "net": "3V3_U11",
+          "layer": "L4_BOTTOM",
+          "x1": 63.5,
+          "y1": 43.5,
+          "x2": 63.5,
+          "y2": 46.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "3V3_U11",
+          "x": 72.0,
+          "y": 48.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "3V3_U11",
+          "x": 65.5,
+          "y": 47.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "3V3_U11",
+          "x": 65.5,
+          "y": 48.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "3V3_U11",
+          "x": 65.5,
+          "y": 52.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "3V3_U11",
+          "x": 72.0,
+          "y": 47.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "3V3_U11",
+          "x": 64.0,
+          "y": 43.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "3V3_U11",
+          "x": 64.0,
+          "y": 46.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 7
     },
     "AGND_U11": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "AGND_U11",
           "layer": "L1_TOP",
           "x1": 74.75,
           "y1": 42.5,
-          "x2": 76.0,
+          "x2": 75.0,
+          "y2": 42.5
+        },
+        {
+          "net": "AGND_U11",
+          "layer": "L4_BOTTOM",
+          "x1": 75.0,
+          "y1": 42.5,
+          "x2": 75.5,
           "y2": 42.5
         },
         {
@@ -168,27 +413,144 @@
           "x1": 72.0,
           "y1": 49.25,
           "x2": 72.0,
-          "y2": 50.0
+          "y2": 49.5
+        },
+        {
+          "net": "AGND_U11",
+          "layer": "L1_TOP",
+          "x1": 72.0,
+          "y1": 42.5,
+          "x2": 72.0,
+          "y2": 49.5
+        },
+        {
+          "net": "AGND_U11",
+          "layer": "L1_TOP",
+          "x1": 72.0,
+          "y1": 49.5,
+          "x2": 71.0,
+          "y2": 49.5
+        },
+        {
+          "net": "AGND_U11",
+          "layer": "L1_TOP",
+          "x1": 71.0,
+          "y1": 49.5,
+          "x2": 71.0,
+          "y2": 52.0
+        },
+        {
+          "net": "AGND_U11",
+          "layer": "L4_BOTTOM",
+          "x1": 70.5,
+          "y1": 52.0,
+          "x2": 64.0,
+          "y2": 52.0
+        }
+      ],
+      "vias": [
+        {
+          "net": "AGND_U11",
+          "x": 75.0,
+          "y": 42.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "AGND_U11",
+          "x": 73.5,
+          "y": 42.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "AGND_U11",
+          "x": 72.0,
+          "y": 42.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "AGND_U11",
+          "x": 70.5,
+          "y": 52.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "AGND_U11",
+          "x": 64.0,
+          "y": 49.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 5
+    },
+    "IS3": {
+      "routed": true,
+      "segments": [
+        {
+          "net": "IS3",
+          "layer": "L1_TOP",
+          "x1": 4.9,
+          "y1": 72.0,
+          "x2": 5.5,
+          "y2": 72.0
+        },
+        {
+          "net": "IS3",
+          "layer": "L1_TOP",
+          "x1": 59.75,
+          "y1": 58.0,
+          "x2": 60.5,
+          "y2": 58.0
+        },
+        {
+          "net": "IS3",
+          "layer": "L1_TOP",
+          "x1": 5.5,
+          "y1": 72.0,
+          "x2": 5.5,
+          "y2": 58.5
+        },
+        {
+          "net": "IS3",
+          "layer": "L1_TOP",
+          "x1": 5.5,
+          "y1": 58.5,
+          "x2": 58.5,
+          "y2": 58.5
+        },
+        {
+          "net": "IS3",
+          "layer": "L1_TOP",
+          "x1": 58.5,
+          "y1": 58.5,
+          "x2": 58.5,
+          "y2": 58.0
+        },
+        {
+          "net": "IS3",
+          "layer": "L1_TOP",
+          "x1": 58.5,
+          "y1": 58.0,
+          "x2": 60.5,
+          "y2": 58.0
         }
       ],
       "vias": [],
       "via_count": 0
     },
-    "IS3": {
-      "routed": true,
-      "segments": [],
-      "vias": [],
-      "via_count": 0
-    },
     "CH1_REF": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "CH1_REF",
           "layer": "L1_TOP",
           "x1": 52.25,
           "y1": 57.5,
-          "x2": 53.0,
+          "x2": 52.5,
           "y2": 57.5
         },
         {
@@ -205,11 +567,59 @@
           "x1": 55.0,
           "y1": 58.25,
           "x2": 55.0,
-          "y2": 59.0
+          "y2": 58.0
+        },
+        {
+          "net": "CH1_REF",
+          "layer": "L4_BOTTOM",
+          "x1": 55.0,
+          "y1": 58.0,
+          "x2": 55.0,
+          "y2": 58.5
+        },
+        {
+          "net": "CH1_REF",
+          "layer": "L1_TOP",
+          "x1": 52.5,
+          "y1": 57.5,
+          "x2": 52.5,
+          "y2": 54.0
+        },
+        {
+          "net": "CH1_REF",
+          "layer": "L1_TOP",
+          "x1": 52.5,
+          "y1": 57.5,
+          "x2": 52.5,
+          "y2": 58.0
+        },
+        {
+          "net": "CH1_REF",
+          "layer": "L1_TOP",
+          "x1": 52.5,
+          "y1": 58.0,
+          "x2": 55.0,
+          "y2": 58.0
+        },
+        {
+          "net": "CH1_REF",
+          "layer": "L1_TOP",
+          "x1": 55.0,
+          "y1": 58.0,
+          "x2": 55.0,
+          "y2": 58.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "CH1_REF",
+          "x": 55.0,
+          "y": 58.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        }
+      ],
+      "via_count": 1
     },
     "D+5V_DIV1": {
       "routed": true,
@@ -218,7 +628,7 @@
       "via_count": 0
     },
     "AGND_DIV1": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "AGND_DIV1",
@@ -237,11 +647,26 @@
           "y2": 54.0
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "AGND_DIV1",
+          "x": 51.5,
+          "y": 54.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "AGND_DIV1",
+          "x": 53.5,
+          "y": 54.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 2
     },
     "N_CH1_P": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "N_CH1_P",
@@ -256,6 +681,14 @@
           "layer": "L1_TOP",
           "x1": 58.25,
           "y1": 54.5,
+          "x2": 58.0,
+          "y2": 54.5
+        },
+        {
+          "net": "N_CH1_P",
+          "layer": "L4_BOTTOM",
+          "x1": 58.0,
+          "y1": 54.5,
           "x2": 57.5,
           "y2": 54.5
         },
@@ -264,7 +697,15 @@
           "layer": "L1_TOP",
           "x1": 56.75,
           "y1": 42.45,
-          "x2": 55.5,
+          "x2": 57.0,
+          "y2": 42.5
+        },
+        {
+          "net": "N_CH1_P",
+          "layer": "L4_BOTTOM",
+          "x1": 57.0,
+          "y1": 42.5,
+          "x2": 56.5,
           "y2": 42.5
         },
         {
@@ -274,13 +715,98 @@
           "y1": 54.0,
           "x2": 56.5,
           "y2": 54.0
+        },
+        {
+          "net": "N_CH1_P",
+          "layer": "L4_BOTTOM",
+          "x1": 56.5,
+          "y1": 48.5,
+          "x2": 56.5,
+          "y2": 44.0
+        },
+        {
+          "net": "N_CH1_P",
+          "layer": "L4_BOTTOM",
+          "x1": 56.5,
+          "y1": 44.0,
+          "x2": 57.5,
+          "y2": 44.0
+        },
+        {
+          "net": "N_CH1_P",
+          "layer": "L4_BOTTOM",
+          "x1": 57.5,
+          "y1": 44.0,
+          "x2": 57.5,
+          "y2": 43.0
+        },
+        {
+          "net": "N_CH1_P",
+          "layer": "L4_BOTTOM",
+          "x1": 57.5,
+          "y1": 43.0,
+          "x2": 56.5,
+          "y2": 43.0
+        },
+        {
+          "net": "N_CH1_P",
+          "layer": "L1_TOP",
+          "x1": 57.5,
+          "y1": 58.0,
+          "x2": 57.5,
+          "y2": 54.5
+        },
+        {
+          "net": "N_CH1_P",
+          "layer": "L1_TOP",
+          "x1": 57.5,
+          "y1": 54.5,
+          "x2": 57.5,
+          "y2": 54.0
+        },
+        {
+          "net": "N_CH1_P",
+          "layer": "L1_TOP",
+          "x1": 57.5,
+          "y1": 54.0,
+          "x2": 56.5,
+          "y2": 54.0
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH1_P",
+          "x": 58.0,
+          "y": 54.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH1_P",
+          "x": 57.0,
+          "y": 42.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH1_P",
+          "x": 56.5,
+          "y": 48.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH1_P",
+          "x": 56.5,
+          "y": 42.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 4
     },
     "N_CH1_N": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "N_CH1_N",
@@ -288,7 +814,7 @@
           "x1": 55.0,
           "y1": 56.75,
           "x2": 55.0,
-          "y2": 56.0
+          "y2": 56.5
         },
         {
           "net": "N_CH1_N",
@@ -303,7 +829,15 @@
           "layer": "L1_TOP",
           "x1": 56.75,
           "y1": 43.4,
-          "x2": 55.5,
+          "x2": 57.0,
+          "y2": 43.5
+        },
+        {
+          "net": "N_CH1_N",
+          "layer": "L4_BOTTOM",
+          "x1": 57.0,
+          "y1": 43.5,
+          "x2": 56.5,
           "y2": 43.5
         },
         {
@@ -321,13 +855,87 @@
           "y1": 54.5,
           "x2": 73.5,
           "y2": 54.5
+        },
+        {
+          "net": "N_CH1_N",
+          "layer": "L4_BOTTOM",
+          "x1": 55.0,
+          "y1": 48.5,
+          "x2": 55.0,
+          "y2": 43.5
+        },
+        {
+          "net": "N_CH1_N",
+          "layer": "L1_TOP",
+          "x1": 55.0,
+          "y1": 56.5,
+          "x2": 55.0,
+          "y2": 54.5
+        },
+        {
+          "net": "N_CH1_N",
+          "layer": "L1_TOP",
+          "x1": 55.0,
+          "y1": 54.5,
+          "x2": 60.5,
+          "y2": 54.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH1_N",
+          "x": 57.0,
+          "y": 43.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH1_N",
+          "x": 55.0,
+          "y": 48.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH1_N",
+          "x": 56.5,
+          "y": 43.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH1_N",
+          "x": 66.5,
+          "y": 54.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH1_N",
+          "x": 73.5,
+          "y": 54.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH1_N",
+          "x": 72.5,
+          "y": 54.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH1_N",
+          "x": 72.5,
+          "y": 58.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 7
     },
     "N_CH1_OUT": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "N_CH1_OUT",
@@ -358,28 +966,130 @@
           "layer": "L1_TOP",
           "x1": 67.25,
           "y1": 43.45,
-          "x2": 66.0,
+          "x2": 67.0,
           "y2": 43.5
         },
         {
           "net": "N_CH1_OUT",
           "layer": "L4_BOTTOM",
-          "x1": 114.0,
-          "y1": 90.0,
-          "x2": 114.0,
-          "y2": 87.0
+          "x1": 67.0,
+          "y1": 43.5,
+          "x2": 66.5,
+          "y2": 43.5
+        },
+        {
+          "net": "N_CH1_OUT",
+          "layer": "L1_TOP",
+          "x1": 66.5,
+          "y1": 43.5,
+          "x2": 68.0,
+          "y2": 43.5
+        },
+        {
+          "net": "N_CH1_OUT",
+          "layer": "L1_TOP",
+          "x1": 68.0,
+          "y1": 43.5,
+          "x2": 68.0,
+          "y2": 47.5
+        },
+        {
+          "net": "N_CH1_OUT",
+          "layer": "L1_TOP",
+          "x1": 68.0,
+          "y1": 47.5,
+          "x2": 70.0,
+          "y2": 47.5
+        },
+        {
+          "net": "N_CH1_OUT",
+          "layer": "L1_TOP",
+          "x1": 70.0,
+          "y1": 47.5,
+          "x2": 70.0,
+          "y2": 54.5
+        },
+        {
+          "net": "N_CH1_OUT",
+          "layer": "L1_TOP",
+          "x1": 70.0,
+          "y1": 54.5,
+          "x2": 70.5,
+          "y2": 54.5
+        },
+        {
+          "net": "N_CH1_OUT",
+          "layer": "L1_TOP",
+          "x1": 57.0,
+          "y1": 45.0,
+          "x2": 57.0,
+          "y2": 44.0
+        },
+        {
+          "net": "N_CH1_OUT",
+          "layer": "L1_TOP",
+          "x1": 57.0,
+          "y1": 44.0,
+          "x2": 65.0,
+          "y2": 44.0
+        },
+        {
+          "net": "N_CH1_OUT",
+          "layer": "L1_TOP",
+          "x1": 65.0,
+          "y1": 44.0,
+          "x2": 65.0,
+          "y2": 43.5
+        },
+        {
+          "net": "N_CH1_OUT",
+          "layer": "L1_TOP",
+          "x1": 65.0,
+          "y1": 43.5,
+          "x2": 66.5,
+          "y2": 43.5
         },
         {
           "net": "N_CH1_OUT",
           "layer": "L4_BOTTOM",
-          "x1": 114.0,
-          "y1": 87.0,
-          "x2": 132.0,
-          "y2": 87.0
+          "x1": 70.5,
+          "y1": 54.5,
+          "x2": 70.5,
+          "y2": 55.0
+        },
+        {
+          "net": "N_CH1_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 70.5,
+          "y1": 55.0,
+          "x2": 69.5,
+          "y2": 55.0
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH1_OUT",
+          "x": 67.0,
+          "y": 43.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH1_OUT",
+          "x": 70.5,
+          "y": 54.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH1_OUT",
+          "x": 69.5,
+          "y": 58.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 3
     },
     "ADCB1": {
       "routed": true,
@@ -397,24 +1107,48 @@
           "layer": "L1_TOP",
           "x1": 67.25,
           "y1": 44.4,
-          "x2": 66.0,
+          "x2": 66.5,
           "y2": 44.5
         },
         {
           "net": "ADCB1",
           "layer": "L1_TOP",
-          "x1": 134.0,
-          "y1": 92.0,
-          "x2": 132.0,
-          "y2": 92.0
+          "x1": 135.1,
+          "y1": 72.0,
+          "x2": 134.5,
+          "y2": 72.0
         },
         {
           "net": "ADCB1",
           "layer": "L1_TOP",
-          "x1": 132.0,
-          "y1": 92.0,
-          "x2": 132.0,
-          "y2": 89.0
+          "x1": 67.0,
+          "y1": 46.0,
+          "x2": 67.0,
+          "y2": 72.0
+        },
+        {
+          "net": "ADCB1",
+          "layer": "L1_TOP",
+          "x1": 67.0,
+          "y1": 72.0,
+          "x2": 134.5,
+          "y2": 72.0
+        },
+        {
+          "net": "ADCB1",
+          "layer": "L1_TOP",
+          "x1": 67.0,
+          "y1": 46.0,
+          "x2": 66.5,
+          "y2": 46.0
+        },
+        {
+          "net": "ADCB1",
+          "layer": "L1_TOP",
+          "x1": 66.5,
+          "y1": 46.0,
+          "x2": 66.5,
+          "y2": 44.5
         }
       ],
       "vias": [],
@@ -422,17 +1156,80 @@
     },
     "IS4": {
       "routed": true,
-      "segments": [],
-      "vias": [],
-      "via_count": 0
+      "segments": [
+        {
+          "net": "IS4",
+          "layer": "L1_TOP",
+          "x1": 4.9,
+          "y1": 55.0,
+          "x2": 5.5,
+          "y2": 55.0
+        },
+        {
+          "net": "IS4",
+          "layer": "L1_TOP",
+          "x1": 54.75,
+          "y1": 50.5,
+          "x2": 55.0,
+          "y2": 50.5
+        },
+        {
+          "net": "IS4",
+          "layer": "L4_BOTTOM",
+          "x1": 55.0,
+          "y1": 50.5,
+          "x2": 55.5,
+          "y2": 50.5
+        },
+        {
+          "net": "IS4",
+          "layer": "L1_TOP",
+          "x1": 5.5,
+          "y1": 55.0,
+          "x2": 5.5,
+          "y2": 50.5
+        }
+      ],
+      "vias": [
+        {
+          "net": "IS4",
+          "x": 55.0,
+          "y": 50.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "IS4",
+          "x": 50.5,
+          "y": 50.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "IS4",
+          "x": 55.5,
+          "y": 50.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 3
     },
     "CH2_REF": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "CH2_REF",
           "layer": "L1_TOP",
           "x1": 49.25,
+          "y1": 50.5,
+          "x2": 49.0,
+          "y2": 50.5
+        },
+        {
+          "net": "CH2_REF",
+          "layer": "L4_BOTTOM",
+          "x1": 49.0,
           "y1": 50.5,
           "x2": 48.5,
           "y2": 50.5
@@ -451,11 +1248,57 @@
           "x1": 48.0,
           "y1": 45.75,
           "x2": 48.0,
-          "y2": 45.0
+          "y2": 45.5
+        },
+        {
+          "net": "CH2_REF",
+          "layer": "L4_BOTTOM",
+          "x1": 48.5,
+          "y1": 50.5,
+          "x2": 48.0,
+          "y2": 50.5
+        },
+        {
+          "net": "CH2_REF",
+          "layer": "L1_TOP",
+          "x1": 48.0,
+          "y1": 45.5,
+          "x2": 44.5,
+          "y2": 45.5
+        },
+        {
+          "net": "CH2_REF",
+          "layer": "L1_TOP",
+          "x1": 44.5,
+          "y1": 45.5,
+          "x2": 44.5,
+          "y2": 44.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "CH2_REF",
+          "x": 49.0,
+          "y": 50.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "CH2_REF",
+          "x": 48.5,
+          "y": 50.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "CH2_REF",
+          "x": 48.0,
+          "y": 45.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 3
     },
     "D-5V_DIV2": {
       "routed": true,
@@ -464,7 +1307,7 @@
       "via_count": 0
     },
     "AGND_DIV2": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "AGND_DIV2",
@@ -481,13 +1324,68 @@
           "y1": 51.0,
           "x2": 59.5,
           "y2": 51.0
+        },
+        {
+          "net": "AGND_DIV2",
+          "layer": "L1_TOP",
+          "x1": 44.5,
+          "y1": 47.5,
+          "x2": 44.5,
+          "y2": 50.0
+        },
+        {
+          "net": "AGND_DIV2",
+          "layer": "L4_BOTTOM",
+          "x1": 50.5,
+          "y1": 50.0,
+          "x2": 56.0,
+          "y2": 50.0
+        },
+        {
+          "net": "AGND_DIV2",
+          "layer": "L4_BOTTOM",
+          "x1": 56.0,
+          "y1": 50.0,
+          "x2": 56.0,
+          "y2": 50.5
+        },
+        {
+          "net": "AGND_DIV2",
+          "layer": "L4_BOTTOM",
+          "x1": 56.0,
+          "y1": 50.5,
+          "x2": 57.5,
+          "y2": 50.5
+        },
+        {
+          "net": "AGND_DIV2",
+          "layer": "L4_BOTTOM",
+          "x1": 57.5,
+          "y1": 50.5,
+          "x2": 57.5,
+          "y2": 51.0
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "AGND_DIV2",
+          "x": 50.5,
+          "y": 50.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "AGND_DIV2",
+          "x": 59.5,
+          "y": 51.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 2
     },
     "N_CH2_P": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "N_CH2_P",
@@ -503,14 +1401,22 @@
           "x1": 51.0,
           "y1": 45.75,
           "x2": 51.0,
-          "y2": 45.0
+          "y2": 46.0
+        },
+        {
+          "net": "N_CH2_P",
+          "layer": "L4_BOTTOM",
+          "x1": 51.0,
+          "y1": 46.0,
+          "x2": 51.0,
+          "y2": 45.5
         },
         {
           "net": "N_CH2_P",
           "layer": "L1_TOP",
           "x1": 56.75,
           "y1": 40.55,
-          "x2": 55.5,
+          "x2": 56.5,
           "y2": 40.5
         },
         {
@@ -518,15 +1424,134 @@
           "layer": "L1_TOP",
           "x1": 57.25,
           "y1": 51.0,
+          "x2": 57.0,
+          "y2": 51.0
+        },
+        {
+          "net": "N_CH2_P",
+          "layer": "L4_BOTTOM",
+          "x1": 57.0,
+          "y1": 51.0,
           "x2": 56.5,
+          "y2": 51.0
+        },
+        {
+          "net": "N_CH2_P",
+          "layer": "L1_TOP",
+          "x1": 56.5,
+          "y1": 51.0,
+          "x2": 56.0,
+          "y2": 51.0
+        },
+        {
+          "net": "N_CH2_P",
+          "layer": "L4_BOTTOM",
+          "x1": 56.0,
+          "y1": 48.5,
+          "x2": 56.0,
+          "y2": 44.0
+        },
+        {
+          "net": "N_CH2_P",
+          "layer": "L4_BOTTOM",
+          "x1": 55.5,
+          "y1": 41.0,
+          "x2": 56.5,
+          "y2": 41.0
+        },
+        {
+          "net": "N_CH2_P",
+          "layer": "L1_TOP",
+          "x1": 52.5,
+          "y1": 50.5,
+          "x2": 51.0,
+          "y2": 50.5
+        },
+        {
+          "net": "N_CH2_P",
+          "layer": "L1_TOP",
+          "x1": 52.5,
+          "y1": 50.5,
+          "x2": 52.5,
           "y2": 51.0
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH2_P",
+          "x": 51.0,
+          "y": 46.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_P",
+          "x": 57.0,
+          "y": 51.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_P",
+          "x": 56.0,
+          "y": 48.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_P",
+          "x": 55.5,
+          "y": 44.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH2_P",
+          "x": 55.5,
+          "y": 41.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_P",
+          "x": 56.5,
+          "y": 40.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH2_P",
+          "x": 51.0,
+          "y": 48.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_P",
+          "x": 51.0,
+          "y": 45.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH2_P",
+          "x": 54.5,
+          "y": 51.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_P",
+          "x": 56.5,
+          "y": 51.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 10
     },
     "N_CH2_N": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "N_CH2_N",
@@ -534,7 +1559,7 @@
           "x1": 48.0,
           "y1": 47.25,
           "x2": 48.0,
-          "y2": 48.0
+          "y2": 47.5
         },
         {
           "net": "N_CH2_N",
@@ -542,20 +1567,28 @@
           "x1": 51.0,
           "y1": 47.25,
           "x2": 51.0,
-          "y2": 48.0
+          "y2": 47.5
         },
         {
           "net": "N_CH2_N",
           "layer": "L1_TOP",
           "x1": 56.75,
           "y1": 39.6,
-          "x2": 55.5,
+          "x2": 56.5,
           "y2": 39.5
         },
         {
           "net": "N_CH2_N",
           "layer": "L1_TOP",
           "x1": 68.25,
+          "y1": 51.5,
+          "x2": 68.0,
+          "y2": 51.5
+        },
+        {
+          "net": "N_CH2_N",
+          "layer": "L4_BOTTOM",
+          "x1": 68.0,
           "y1": 51.5,
           "x2": 67.5,
           "y2": 51.5
@@ -565,15 +1598,101 @@
           "layer": "L1_TOP",
           "x1": 69.25,
           "y1": 48.0,
-          "x2": 70.0,
+          "x2": 69.5,
           "y2": 48.0
+        },
+        {
+          "net": "N_CH2_N",
+          "layer": "L1_TOP",
+          "x1": 51.0,
+          "y1": 47.5,
+          "x2": 51.0,
+          "y2": 48.0
+        },
+        {
+          "net": "N_CH2_N",
+          "layer": "L1_TOP",
+          "x1": 51.0,
+          "y1": 47.5,
+          "x2": 51.0,
+          "y2": 45.0
+        },
+        {
+          "net": "N_CH2_N",
+          "layer": "L1_TOP",
+          "x1": 51.0,
+          "y1": 45.0,
+          "x2": 56.5,
+          "y2": 45.0
+        },
+        {
+          "net": "N_CH2_N",
+          "layer": "L1_TOP",
+          "x1": 56.5,
+          "y1": 45.0,
+          "x2": 56.5,
+          "y2": 39.5
+        },
+        {
+          "net": "N_CH2_N",
+          "layer": "L1_TOP",
+          "x1": 69.5,
+          "y1": 48.0,
+          "x2": 68.0,
+          "y2": 48.0
+        },
+        {
+          "net": "N_CH2_N",
+          "layer": "L1_TOP",
+          "x1": 68.0,
+          "y1": 48.0,
+          "x2": 68.0,
+          "y2": 51.5
+        },
+        {
+          "net": "N_CH2_N",
+          "layer": "L1_TOP",
+          "x1": 68.0,
+          "y1": 51.5,
+          "x2": 67.5,
+          "y2": 51.5
+        },
+        {
+          "net": "N_CH2_N",
+          "layer": "L1_TOP",
+          "x1": 48.0,
+          "y1": 47.5,
+          "x2": 51.0,
+          "y2": 47.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH2_N",
+          "x": 68.0,
+          "y": 51.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_N",
+          "x": 66.5,
+          "y": 48.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_N",
+          "x": 69.5,
+          "y": 48.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 3
     },
     "N_CH2_OUT": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "N_CH2_OUT",
@@ -588,6 +1707,14 @@
           "layer": "L1_TOP",
           "x1": 69.75,
           "y1": 51.5,
+          "x2": 70.0,
+          "y2": 51.5
+        },
+        {
+          "net": "N_CH2_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 70.0,
+          "y1": 51.5,
           "x2": 70.5,
           "y2": 51.5
         },
@@ -596,7 +1723,7 @@
           "layer": "L1_TOP",
           "x1": 67.75,
           "y1": 48.0,
-          "x2": 67.0,
+          "x2": 67.5,
           "y2": 48.0
         },
         {
@@ -604,44 +1731,135 @@
           "layer": "L1_TOP",
           "x1": 67.25,
           "y1": 41.55,
-          "x2": 66.0,
+          "x2": 67.0,
+          "y2": 41.5
+        },
+        {
+          "net": "N_CH2_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 67.0,
+          "y1": 41.5,
+          "x2": 66.5,
           "y2": 41.5
         },
         {
           "net": "N_CH2_OUT",
           "layer": "L1_TOP",
-          "x1": 114.0,
-          "y1": 76.0,
-          "x2": 114.0,
-          "y2": 82.5
+          "x1": 57.0,
+          "y1": 38.0,
+          "x2": 57.0,
+          "y2": 39.0
         },
         {
           "net": "N_CH2_OUT",
           "layer": "L1_TOP",
-          "x1": 114.0,
-          "y1": 82.5,
-          "x2": 131.5,
-          "y2": 82.5
+          "x1": 57.0,
+          "y1": 39.0,
+          "x2": 57.5,
+          "y2": 39.0
         },
         {
           "net": "N_CH2_OUT",
           "layer": "L1_TOP",
-          "x1": 131.5,
-          "y1": 82.5,
-          "x2": 131.5,
-          "y2": 83.0
+          "x1": 57.5,
+          "y1": 39.0,
+          "x2": 57.5,
+          "y2": 41.5
         },
         {
           "net": "N_CH2_OUT",
           "layer": "L1_TOP",
-          "x1": 131.5,
-          "y1": 83.0,
-          "x2": 132.0,
-          "y2": 83.0
+          "x1": 57.5,
+          "y1": 41.5,
+          "x2": 66.5,
+          "y2": 41.5
+        },
+        {
+          "net": "N_CH2_OUT",
+          "layer": "L1_TOP",
+          "x1": 66.5,
+          "y1": 41.5,
+          "x2": 67.0,
+          "y2": 41.5
+        },
+        {
+          "net": "N_CH2_OUT",
+          "layer": "L1_TOP",
+          "x1": 67.0,
+          "y1": 41.5,
+          "x2": 67.0,
+          "y2": 43.0
+        },
+        {
+          "net": "N_CH2_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 67.5,
+          "y1": 48.0,
+          "x2": 67.5,
+          "y2": 51.0
+        },
+        {
+          "net": "N_CH2_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 67.5,
+          "y1": 51.0,
+          "x2": 68.5,
+          "y2": 51.0
+        },
+        {
+          "net": "N_CH2_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 68.5,
+          "y1": 51.0,
+          "x2": 68.5,
+          "y2": 51.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH2_OUT",
+          "x": 70.0,
+          "y": 51.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_OUT",
+          "x": 67.0,
+          "y": 41.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_OUT",
+          "x": 67.5,
+          "y": 43.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_OUT",
+          "x": 67.5,
+          "y": 48.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH2_OUT",
+          "x": 67.5,
+          "y": 48.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH2_OUT",
+          "x": 70.5,
+          "y": 51.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 6
     },
     "ADCB2": {
       "routed": true,
@@ -659,24 +1877,64 @@
           "layer": "L1_TOP",
           "x1": 67.25,
           "y1": 40.6,
-          "x2": 66.0,
+          "x2": 66.5,
           "y2": 40.5
         },
         {
           "net": "ADCB2",
           "layer": "L1_TOP",
-          "x1": 134.0,
-          "y1": 78.0,
-          "x2": 132.0,
-          "y2": 78.0
+          "x1": 135.1,
+          "y1": 55.0,
+          "x2": 134.5,
+          "y2": 55.0
         },
         {
           "net": "ADCB2",
           "layer": "L1_TOP",
-          "x1": 132.0,
-          "y1": 78.0,
-          "x2": 132.0,
-          "y2": 81.0
+          "x1": 66.5,
+          "y1": 40.5,
+          "x2": 66.5,
+          "y2": 44.0
+        },
+        {
+          "net": "ADCB2",
+          "layer": "L1_TOP",
+          "x1": 66.5,
+          "y1": 44.0,
+          "x2": 67.5,
+          "y2": 44.0
+        },
+        {
+          "net": "ADCB2",
+          "layer": "L1_TOP",
+          "x1": 67.5,
+          "y1": 44.0,
+          "x2": 67.5,
+          "y2": 55.0
+        },
+        {
+          "net": "ADCB2",
+          "layer": "L1_TOP",
+          "x1": 67.5,
+          "y1": 55.0,
+          "x2": 134.5,
+          "y2": 55.0
+        },
+        {
+          "net": "ADCB2",
+          "layer": "L1_TOP",
+          "x1": 67.0,
+          "y1": 39.0,
+          "x2": 66.5,
+          "y2": 39.0
+        },
+        {
+          "net": "ADCB2",
+          "layer": "L1_TOP",
+          "x1": 66.5,
+          "y1": 39.0,
+          "x2": 66.5,
+          "y2": 40.5
         }
       ],
       "vias": [],
@@ -684,15 +1942,189 @@
     },
     "VP3": {
       "routed": true,
-      "segments": [],
-      "vias": [],
-      "via_count": 0
+      "segments": [
+        {
+          "net": "VP3",
+          "layer": "L1_TOP",
+          "x1": 4.9,
+          "y1": 39.0,
+          "x2": 5.0,
+          "y2": 39.0
+        },
+        {
+          "net": "VP3",
+          "layer": "L4_BOTTOM",
+          "x1": 5.0,
+          "y1": 39.0,
+          "x2": 5.5,
+          "y2": 39.0
+        },
+        {
+          "net": "VP3",
+          "layer": "L1_TOP",
+          "x1": 50.0,
+          "y1": 43.25,
+          "x2": 50.0,
+          "y2": 43.0
+        },
+        {
+          "net": "VP3",
+          "layer": "L4_BOTTOM",
+          "x1": 50.0,
+          "y1": 43.0,
+          "x2": 50.0,
+          "y2": 43.5
+        },
+        {
+          "net": "VP3",
+          "layer": "L4_BOTTOM",
+          "x1": 5.5,
+          "y1": 39.0,
+          "x2": 5.5,
+          "y2": 43.5
+        }
+      ],
+      "vias": [
+        {
+          "net": "VP3",
+          "x": 5.0,
+          "y": 39.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "VP3",
+          "x": 50.0,
+          "y": 43.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "VP3",
+          "x": 5.5,
+          "y": 39.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "VP3",
+          "x": 50.0,
+          "y": 43.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 4
     },
     "VN3": {
       "routed": true,
-      "segments": [],
-      "vias": [],
-      "via_count": 0
+      "segments": [
+        {
+          "net": "VN3",
+          "layer": "L1_TOP",
+          "x1": 4.9,
+          "y1": 33.0,
+          "x2": 5.0,
+          "y2": 33.0
+        },
+        {
+          "net": "VN3",
+          "layer": "L4_BOTTOM",
+          "x1": 5.0,
+          "y1": 33.0,
+          "x2": 5.5,
+          "y2": 33.0
+        },
+        {
+          "net": "VN3",
+          "layer": "L1_TOP",
+          "x1": 53.75,
+          "y1": 39.5,
+          "x2": 54.0,
+          "y2": 39.5
+        },
+        {
+          "net": "VN3",
+          "layer": "L4_BOTTOM",
+          "x1": 54.0,
+          "y1": 39.5,
+          "x2": 54.5,
+          "y2": 39.5
+        },
+        {
+          "net": "VN3",
+          "layer": "L1_TOP",
+          "x1": 5.5,
+          "y1": 33.0,
+          "x2": 6.0,
+          "y2": 33.0
+        },
+        {
+          "net": "VN3",
+          "layer": "L1_TOP",
+          "x1": 6.0,
+          "y1": 33.0,
+          "x2": 6.0,
+          "y2": 38.5
+        },
+        {
+          "net": "VN3",
+          "layer": "L1_TOP",
+          "x1": 6.0,
+          "y1": 38.5,
+          "x2": 50.0,
+          "y2": 38.5
+        },
+        {
+          "net": "VN3",
+          "layer": "L1_TOP",
+          "x1": 50.0,
+          "y1": 38.5,
+          "x2": 50.0,
+          "y2": 39.0
+        },
+        {
+          "net": "VN3",
+          "layer": "L1_TOP",
+          "x1": 50.0,
+          "y1": 39.0,
+          "x2": 54.0,
+          "y2": 39.0
+        },
+        {
+          "net": "VN3",
+          "layer": "L1_TOP",
+          "x1": 54.0,
+          "y1": 39.0,
+          "x2": 54.0,
+          "y2": 39.5
+        },
+        {
+          "net": "VN3",
+          "layer": "L1_TOP",
+          "x1": 54.0,
+          "y1": 39.5,
+          "x2": 54.5,
+          "y2": 39.5
+        }
+      ],
+      "vias": [
+        {
+          "net": "VN3",
+          "x": 5.0,
+          "y": 33.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "VN3",
+          "x": 54.0,
+          "y": 39.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        }
+      ],
+      "via_count": 2
     },
     "AGND_CH3": {
       "routed": true,
@@ -709,7 +2141,7 @@
           "x1": 50.0,
           "y1": 41.75,
           "x2": 50.0,
-          "y2": 41.0
+          "y2": 41.5
         },
         {
           "net": "N_CH3_P",
@@ -724,7 +2156,7 @@
           "layer": "L1_TOP",
           "x1": 64.25,
           "y1": 40.55,
-          "x2": 65.5,
+          "x2": 64.5,
           "y2": 40.5
         },
         {
@@ -738,57 +2170,92 @@
         {
           "net": "N_CH3_P",
           "layer": "L1_TOP",
-          "x1": 100.0,
-          "y1": 82.0,
-          "x2": 100.0,
-          "y2": 89.0
+          "x1": 53.5,
+          "y1": 44.5,
+          "x2": 53.5,
+          "y2": 40.5
         },
         {
           "net": "N_CH3_P",
           "layer": "L1_TOP",
-          "x1": 100.0,
-          "y1": 89.0,
-          "x2": 107.0,
-          "y2": 89.0
-        },
-        {
-          "net": "N_CH3_P",
-          "layer": "L1_TOP",
-          "x1": 107.0,
-          "y1": 89.0,
-          "x2": 107.0,
-          "y2": 91.0
-        },
-        {
-          "net": "N_CH3_P",
-          "layer": "L1_TOP",
-          "x1": 107.0,
-          "y1": 91.0,
-          "x2": 108.0,
-          "y2": 91.0
+          "x1": 50.0,
+          "y1": 41.5,
+          "x2": 50.0,
+          "y2": 44.0
         },
         {
           "net": "N_CH3_P",
           "layer": "L4_BOTTOM",
-          "x1": 100.0,
-          "y1": 82.0,
-          "x2": 100.0,
-          "y2": 81.0
+          "x1": 51.0,
+          "y1": 44.0,
+          "x2": 52.0,
+          "y2": 44.0
         },
         {
           "net": "N_CH3_P",
           "layer": "L4_BOTTOM",
-          "x1": 100.0,
-          "y1": 81.0,
-          "x2": 131.0,
-          "y2": 81.0
+          "x1": 52.0,
+          "y1": 44.0,
+          "x2": 52.0,
+          "y2": 44.5
+        },
+        {
+          "net": "N_CH3_P",
+          "layer": "L4_BOTTOM",
+          "x1": 53.5,
+          "y1": 44.5,
+          "x2": 53.5,
+          "y2": 45.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH3_P",
+          "x": 55.5,
+          "y": 40.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_P",
+          "x": 64.5,
+          "y": 40.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH3_P",
+          "x": 51.0,
+          "y": 44.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_P",
+          "x": 53.5,
+          "y": 44.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH3_P",
+          "x": 53.5,
+          "y": 44.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_P",
+          "x": 54.0,
+          "y": 45.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 6
     },
     "N_CH3_N": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "N_CH3_N",
@@ -804,6 +2271,14 @@
           "x1": 54.0,
           "y1": 47.75,
           "x2": 54.0,
+          "y2": 48.0
+        },
+        {
+          "net": "N_CH3_N",
+          "layer": "L4_BOTTOM",
+          "x1": 54.0,
+          "y1": 48.0,
+          "x2": 54.0,
           "y2": 48.5
         },
         {
@@ -811,7 +2286,7 @@
           "layer": "L1_TOP",
           "x1": 64.25,
           "y1": 39.6,
-          "x2": 65.5,
+          "x2": 64.5,
           "y2": 39.5
         },
         {
@@ -819,7 +2294,7 @@
           "layer": "L1_TOP",
           "x1": 66.75,
           "y1": 36.5,
-          "x2": 66.0,
+          "x2": 66.5,
           "y2": 36.5
         },
         {
@@ -827,15 +2302,83 @@
           "layer": "L1_TOP",
           "x1": 72.25,
           "y1": 36.5,
-          "x2": 73.0,
+          "x2": 72.5,
+          "y2": 36.5
+        },
+        {
+          "net": "N_CH3_N",
+          "layer": "L4_BOTTOM",
+          "x1": 51.5,
+          "y1": 44.5,
+          "x2": 51.5,
+          "y2": 48.5
+        },
+        {
+          "net": "N_CH3_N",
+          "layer": "L1_TOP",
+          "x1": 66.5,
+          "y1": 36.5,
+          "x2": 72.5,
+          "y2": 36.5
+        },
+        {
+          "net": "N_CH3_N",
+          "layer": "L1_TOP",
+          "x1": 64.5,
+          "y1": 39.5,
+          "x2": 64.5,
+          "y2": 36.5
+        },
+        {
+          "net": "N_CH3_N",
+          "layer": "L1_TOP",
+          "x1": 64.5,
+          "y1": 36.5,
+          "x2": 66.5,
           "y2": 36.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH3_N",
+          "x": 54.0,
+          "y": 48.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_N",
+          "x": 55.5,
+          "y": 39.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_N",
+          "x": 64.5,
+          "y": 39.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH3_N",
+          "x": 51.5,
+          "y": 44.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_N",
+          "x": 54.0,
+          "y": 48.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 5
     },
     "N_CH3_OUT": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "N_CH3_OUT",
@@ -850,7 +2393,15 @@
           "layer": "L1_TOP",
           "x1": 68.25,
           "y1": 36.5,
-          "x2": 69.0,
+          "x2": 68.0,
+          "y2": 36.5
+        },
+        {
+          "net": "N_CH3_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 68.0,
+          "y1": 36.5,
+          "x2": 68.5,
           "y2": 36.5
         },
         {
@@ -858,7 +2409,15 @@
           "layer": "L1_TOP",
           "x1": 70.75,
           "y1": 36.5,
-          "x2": 70.0,
+          "x2": 71.0,
+          "y2": 36.5
+        },
+        {
+          "net": "N_CH3_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 71.0,
+          "y1": 36.5,
+          "x2": 70.5,
           "y2": 36.5
         },
         {
@@ -866,55 +2425,127 @@
           "layer": "L1_TOP",
           "x1": 74.75,
           "y1": 41.55,
-          "x2": 76.0,
+          "x2": 75.0,
+          "y2": 41.5
+        },
+        {
+          "net": "N_CH3_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 75.0,
+          "y1": 41.5,
+          "x2": 75.5,
           "y2": 41.5
         },
         {
           "net": "N_CH3_OUT",
           "layer": "L1_TOP",
-          "x1": 128.0,
-          "y1": 76.0,
-          "x2": 128.0,
-          "y2": 73.5
+          "x1": 70.5,
+          "y1": 36.5,
+          "x2": 70.5,
+          "y2": 41.5
         },
         {
           "net": "N_CH3_OUT",
-          "layer": "L1_TOP",
-          "x1": 128.0,
-          "y1": 73.5,
-          "x2": 137.5,
-          "y2": 73.5
+          "layer": "L4_BOTTOM",
+          "x1": 64.0,
+          "y1": 36.5,
+          "x2": 64.5,
+          "y2": 36.5
         },
         {
           "net": "N_CH3_OUT",
-          "layer": "L1_TOP",
-          "x1": 137.5,
-          "y1": 73.5,
-          "x2": 137.5,
-          "y2": 73.0
+          "layer": "L4_BOTTOM",
+          "x1": 64.5,
+          "y1": 36.5,
+          "x2": 64.5,
+          "y2": 35.5
         },
         {
           "net": "N_CH3_OUT",
-          "layer": "L1_TOP",
-          "x1": 137.5,
-          "y1": 73.0,
-          "x2": 138.0,
-          "y2": 73.0
+          "layer": "L4_BOTTOM",
+          "x1": 64.5,
+          "y1": 35.5,
+          "x2": 65.5,
+          "y2": 35.5
         },
         {
           "net": "N_CH3_OUT",
-          "layer": "L1_TOP",
-          "x1": 138.0,
-          "y1": 73.0,
-          "x2": 140.0,
-          "y2": 73.0
+          "layer": "L4_BOTTOM",
+          "x1": 65.5,
+          "y1": 35.5,
+          "x2": 65.5,
+          "y2": 36.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH3_OUT",
+          "x": 68.0,
+          "y": 36.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_OUT",
+          "x": 71.0,
+          "y": 36.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_OUT",
+          "x": 75.0,
+          "y": 41.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_OUT",
+          "x": 72.5,
+          "y": 41.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_OUT",
+          "x": 75.5,
+          "y": 41.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH3_OUT",
+          "x": 64.0,
+          "y": 36.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_OUT",
+          "x": 68.5,
+          "y": 36.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH3_OUT",
+          "x": 68.5,
+          "y": 36.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH3_OUT",
+          "x": 70.5,
+          "y": 36.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 9
     },
     "ADCB3": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "ADCB3",
@@ -929,22 +2560,182 @@
           "layer": "L1_TOP",
           "x1": 74.75,
           "y1": 40.6,
-          "x2": 76.0,
+          "x2": 75.0,
+          "y2": 40.5
+        },
+        {
+          "net": "ADCB3",
+          "layer": "L4_BOTTOM",
+          "x1": 75.0,
+          "y1": 40.5,
+          "x2": 75.5,
+          "y2": 40.5
+        },
+        {
+          "net": "ADCB3",
+          "layer": "L1_TOP",
+          "x1": 135.1,
+          "y1": 36.0,
+          "x2": 134.5,
+          "y2": 36.0
+        },
+        {
+          "net": "ADCB3",
+          "layer": "L1_TOP",
+          "x1": 75.0,
+          "y1": 39.0,
+          "x2": 75.0,
+          "y2": 40.5
+        },
+        {
+          "net": "ADCB3",
+          "layer": "L1_TOP",
+          "x1": 75.0,
+          "y1": 40.5,
+          "x2": 75.5,
           "y2": 40.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "ADCB3",
+          "x": 75.0,
+          "y": 40.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "ADCB3",
+          "x": 75.0,
+          "y": 36.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "ADCB3",
+          "x": 134.5,
+          "y": 36.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 3
     },
     "VP4": {
       "routed": true,
-      "segments": [],
-      "vias": [],
-      "via_count": 0
+      "segments": [
+        {
+          "net": "VP4",
+          "layer": "L1_TOP",
+          "x1": 4.9,
+          "y1": 21.0,
+          "x2": 5.0,
+          "y2": 21.0
+        },
+        {
+          "net": "VP4",
+          "layer": "L4_BOTTOM",
+          "x1": 5.0,
+          "y1": 21.0,
+          "x2": 5.5,
+          "y2": 21.0
+        },
+        {
+          "net": "VP4",
+          "layer": "L1_TOP",
+          "x1": 57.25,
+          "y1": 32.5,
+          "x2": 57.5,
+          "y2": 32.5
+        },
+        {
+          "net": "VP4",
+          "layer": "L1_TOP",
+          "x1": 5.5,
+          "y1": 21.0,
+          "x2": 6.0,
+          "y2": 21.0
+        },
+        {
+          "net": "VP4",
+          "layer": "L1_TOP",
+          "x1": 6.0,
+          "y1": 21.0,
+          "x2": 6.0,
+          "y2": 32.0
+        },
+        {
+          "net": "VP4",
+          "layer": "L1_TOP",
+          "x1": 6.0,
+          "y1": 32.0,
+          "x2": 56.5,
+          "y2": 32.0
+        },
+        {
+          "net": "VP4",
+          "layer": "L1_TOP",
+          "x1": 56.5,
+          "y1": 32.0,
+          "x2": 56.5,
+          "y2": 32.5
+        },
+        {
+          "net": "VP4",
+          "layer": "L1_TOP",
+          "x1": 56.5,
+          "y1": 32.5,
+          "x2": 57.5,
+          "y2": 32.5
+        }
+      ],
+      "vias": [
+        {
+          "net": "VP4",
+          "x": 5.0,
+          "y": 21.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        }
+      ],
+      "via_count": 1
     },
     "VN4": {
       "routed": true,
-      "segments": [],
+      "segments": [
+        {
+          "net": "VN4",
+          "layer": "L1_TOP",
+          "x1": 4.9,
+          "y1": 15.0,
+          "x2": 5.5,
+          "y2": 15.0
+        },
+        {
+          "net": "VN4",
+          "layer": "L1_TOP",
+          "x1": 49.5,
+          "y1": 39.25,
+          "x2": 49.5,
+          "y2": 39.5
+        },
+        {
+          "net": "VN4",
+          "layer": "L1_TOP",
+          "x1": 5.5,
+          "y1": 15.0,
+          "x2": 5.5,
+          "y2": 39.5
+        },
+        {
+          "net": "VN4",
+          "layer": "L1_TOP",
+          "x1": 5.5,
+          "y1": 39.5,
+          "x2": 49.5,
+          "y2": 39.5
+        }
+      ],
       "vias": [],
       "via_count": 0
     },
@@ -962,7 +2753,7 @@
           "layer": "L1_TOP",
           "x1": 55.75,
           "y1": 32.5,
-          "x2": 55.0,
+          "x2": 55.5,
           "y2": 32.5
         },
         {
@@ -970,7 +2761,7 @@
           "layer": "L1_TOP",
           "x1": 55.25,
           "y1": 36.0,
-          "x2": 56.0,
+          "x2": 55.5,
           "y2": 36.0
         },
         {
@@ -978,7 +2769,7 @@
           "layer": "L1_TOP",
           "x1": 64.25,
           "y1": 42.45,
-          "x2": 65.5,
+          "x2": 64.5,
           "y2": 42.5
         },
         {
@@ -986,84 +2777,65 @@
           "layer": "L1_TOP",
           "x1": 60.25,
           "y1": 35.5,
-          "x2": 61.0,
+          "x2": 60.5,
+          "y2": 35.5
+        },
+        {
+          "net": "N_CH4_P",
+          "layer": "L4_BOTTOM",
+          "x1": 60.5,
+          "y1": 41.0,
+          "x2": 60.5,
+          "y2": 42.5
+        },
+        {
+          "net": "N_CH4_P",
+          "layer": "L1_TOP",
+          "x1": 55.5,
+          "y1": 36.0,
+          "x2": 55.5,
           "y2": 35.5
         },
         {
           "net": "N_CH4_P",
           "layer": "L1_TOP",
-          "x1": 110.0,
-          "y1": 65.0,
-          "x2": 110.0,
-          "y2": 72.0
-        },
-        {
-          "net": "N_CH4_P",
-          "layer": "L1_TOP",
-          "x1": 110.0,
-          "y1": 72.0,
-          "x2": 112.0,
-          "y2": 72.0
-        },
-        {
-          "net": "N_CH4_P",
-          "layer": "L1_TOP",
-          "x1": 112.0,
-          "y1": 72.0,
-          "x2": 112.0,
-          "y2": 71.0
-        },
-        {
-          "net": "N_CH4_P",
-          "layer": "L1_TOP",
-          "x1": 112.0,
-          "y1": 71.0,
-          "x2": 122.0,
-          "y2": 71.0
-        },
-        {
-          "net": "N_CH4_P",
-          "layer": "L4_BOTTOM",
-          "x1": 122.0,
-          "y1": 71.0,
-          "x2": 122.0,
-          "y2": 80.5
-        },
-        {
-          "net": "N_CH4_P",
-          "layer": "L4_BOTTOM",
-          "x1": 122.0,
-          "y1": 80.5,
-          "x2": 131.5,
-          "y2": 80.5
-        },
-        {
-          "net": "N_CH4_P",
-          "layer": "L4_BOTTOM",
-          "x1": 131.5,
-          "y1": 80.5,
-          "x2": 131.5,
-          "y2": 81.5
-        },
-        {
-          "net": "N_CH4_P",
-          "layer": "L4_BOTTOM",
-          "x1": 131.5,
-          "y1": 81.5,
-          "x2": 131.0,
-          "y2": 81.5
-        },
-        {
-          "net": "N_CH4_P",
-          "layer": "L4_BOTTOM",
-          "x1": 131.0,
-          "y1": 81.5,
-          "x2": 131.0,
-          "y2": 85.0
+          "x1": 55.5,
+          "y1": 35.5,
+          "x2": 60.5,
+          "y2": 35.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH4_P",
+          "x": 60.5,
+          "y": 41.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH4_P",
+          "x": 64.5,
+          "y": 42.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH4_P",
+          "x": 55.5,
+          "y": 32.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH4_P",
+          "x": 55.5,
+          "y": 36.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 4
     },
     "N_CH4_N": {
       "routed": true,
@@ -1074,14 +2846,14 @@
           "x1": 49.5,
           "y1": 37.75,
           "x2": 49.5,
-          "y2": 37.0
+          "y2": 37.5
         },
         {
           "net": "N_CH4_N",
           "layer": "L1_TOP",
           "x1": 53.75,
           "y1": 36.0,
-          "x2": 53.0,
+          "x2": 53.5,
           "y2": 36.0
         },
         {
@@ -1089,7 +2861,7 @@
           "layer": "L1_TOP",
           "x1": 64.25,
           "y1": 43.4,
-          "x2": 65.5,
+          "x2": 64.5,
           "y2": 43.5
         },
         {
@@ -1097,7 +2869,7 @@
           "layer": "L1_TOP",
           "x1": 70.75,
           "y1": 33.0,
-          "x2": 70.0,
+          "x2": 70.5,
           "y2": 33.0
         },
         {
@@ -1105,103 +2877,94 @@
           "layer": "L1_TOP",
           "x1": 68.25,
           "y1": 33.0,
-          "x2": 69.0,
+          "x2": 68.5,
           "y2": 33.0
         },
         {
           "net": "N_CH4_N",
           "layer": "L1_TOP",
-          "x1": 99.0,
-          "y1": 74.0,
-          "x2": 99.0,
-          "y2": 72.0
+          "x1": 53.5,
+          "y1": 36.0,
+          "x2": 53.5,
+          "y2": 33.0
         },
         {
           "net": "N_CH4_N",
           "layer": "L1_TOP",
-          "x1": 99.0,
-          "y1": 72.0,
-          "x2": 106.0,
-          "y2": 72.0
-        },
-        {
-          "net": "N_CH4_N",
-          "layer": "L4_BOTTOM",
-          "x1": 106.0,
-          "y1": 72.0,
-          "x2": 106.0,
-          "y2": 66.0
-        },
-        {
-          "net": "N_CH4_N",
-          "layer": "L4_BOTTOM",
-          "x1": 106.0,
-          "y1": 66.0,
-          "x2": 138.0,
-          "y2": 66.0
+          "x1": 53.5,
+          "y1": 33.0,
+          "x2": 68.5,
+          "y2": 33.0
         },
         {
           "net": "N_CH4_N",
           "layer": "L1_TOP",
-          "x1": 138.0,
-          "y1": 66.0,
-          "x2": 140.0,
-          "y2": 66.0
+          "x1": 68.5,
+          "y1": 33.0,
+          "x2": 65.0,
+          "y2": 33.0
         },
         {
           "net": "N_CH4_N",
           "layer": "L4_BOTTOM",
-          "x1": 138.0,
-          "y1": 66.0,
-          "x2": 132.0,
-          "y2": 66.0
+          "x1": 65.0,
+          "y1": 36.0,
+          "x2": 65.0,
+          "y2": 40.0
         },
         {
           "net": "N_CH4_N",
           "layer": "L4_BOTTOM",
-          "x1": 132.0,
-          "y1": 66.0,
-          "x2": 132.0,
-          "y2": 82.0
+          "x1": 65.0,
+          "y1": 40.0,
+          "x2": 64.5,
+          "y2": 40.0
         },
         {
           "net": "N_CH4_N",
-          "layer": "L4_BOTTOM",
-          "x1": 132.0,
-          "y1": 82.0,
-          "x2": 131.5,
-          "y2": 82.0
+          "layer": "L1_TOP",
+          "x1": 49.5,
+          "y1": 37.5,
+          "x2": 49.5,
+          "y2": 36.0
         },
         {
           "net": "N_CH4_N",
-          "layer": "L4_BOTTOM",
-          "x1": 131.5,
-          "y1": 82.0,
-          "x2": 131.5,
-          "y2": 85.5
+          "layer": "L1_TOP",
+          "x1": 49.5,
+          "y1": 36.0,
+          "x2": 53.5,
+          "y2": 36.0
         },
         {
           "net": "N_CH4_N",
-          "layer": "L4_BOTTOM",
-          "x1": 131.5,
-          "y1": 85.5,
-          "x2": 131.0,
-          "y2": 85.5
-        },
-        {
-          "net": "N_CH4_N",
-          "layer": "L4_BOTTOM",
-          "x1": 131.0,
-          "y1": 85.5,
-          "x2": 131.0,
-          "y2": 87.0
+          "layer": "L1_TOP",
+          "x1": 68.5,
+          "y1": 33.0,
+          "x2": 70.5,
+          "y2": 33.0
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH4_N",
+          "x": 65.0,
+          "y": 36.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH4_N",
+          "x": 64.5,
+          "y": 43.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 2
     },
     "N_CH4_OUT": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "N_CH4_OUT",
@@ -1216,7 +2979,7 @@
           "layer": "L1_TOP",
           "x1": 72.25,
           "y1": 33.0,
-          "x2": 73.0,
+          "x2": 72.5,
           "y2": 33.0
         },
         {
@@ -1224,7 +2987,15 @@
           "layer": "L1_TOP",
           "x1": 66.75,
           "y1": 33.0,
-          "x2": 66.0,
+          "x2": 67.0,
+          "y2": 33.0
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 67.0,
+          "y1": 33.0,
+          "x2": 66.5,
           "y2": 33.0
         },
         {
@@ -1232,15 +3003,170 @@
           "layer": "L1_TOP",
           "x1": 74.75,
           "y1": 43.45,
-          "x2": 76.0,
+          "x2": 75.0,
+          "y2": 43.5
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 75.0,
+          "y1": 43.5,
+          "x2": 75.5,
+          "y2": 43.5
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L1_TOP",
+          "x1": 75.5,
+          "y1": 43.5,
+          "x2": 73.0,
+          "y2": 43.5
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L1_TOP",
+          "x1": 73.0,
+          "y1": 43.5,
+          "x2": 73.0,
+          "y2": 36.0
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L1_TOP",
+          "x1": 73.0,
+          "y1": 36.0,
+          "x2": 72.5,
+          "y2": 36.0
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L1_TOP",
+          "x1": 72.5,
+          "y1": 36.0,
+          "x2": 72.5,
+          "y2": 33.0
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 64.0,
+          "y1": 44.5,
+          "x2": 64.0,
+          "y2": 44.0
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 64.0,
+          "y1": 44.0,
+          "x2": 65.0,
+          "y2": 44.0
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 65.0,
+          "y1": 44.0,
+          "x2": 65.0,
+          "y2": 43.5
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 65.0,
+          "y1": 43.5,
+          "x2": 66.0,
+          "y2": 43.5
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 66.0,
+          "y1": 43.5,
+          "x2": 66.0,
+          "y2": 43.0
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 66.0,
+          "y1": 43.0,
+          "x2": 67.0,
+          "y2": 43.0
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 67.0,
+          "y1": 43.0,
+          "x2": 67.0,
+          "y2": 42.5
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 67.0,
+          "y1": 42.5,
+          "x2": 68.0,
+          "y2": 42.5
+        },
+        {
+          "net": "N_CH4_OUT",
+          "layer": "L4_BOTTOM",
+          "x1": 68.0,
+          "y1": 42.5,
+          "x2": 68.0,
           "y2": 43.5
         }
       ],
-      "vias": [],
-      "via_count": 0
+      "vias": [
+        {
+          "net": "N_CH4_OUT",
+          "x": 67.0,
+          "y": 33.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH4_OUT",
+          "x": 75.0,
+          "y": 43.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH4_OUT",
+          "x": 64.0,
+          "y": 44.5,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH4_OUT",
+          "x": 75.5,
+          "y": 43.5,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        },
+        {
+          "net": "N_CH4_OUT",
+          "x": 71.5,
+          "y": 33.0,
+          "from_layer": "L1_TOP",
+          "to_layer": "L4_BOTTOM"
+        },
+        {
+          "net": "N_CH4_OUT",
+          "x": 66.5,
+          "y": 33.0,
+          "from_layer": "L4_BOTTOM",
+          "to_layer": "L1_TOP"
+        }
+      ],
+      "via_count": 6
     },
     "ADCD0": {
-      "routed": false,
+      "routed": true,
       "segments": [
         {
           "net": "ADCD0",
@@ -1255,7 +3181,47 @@
           "layer": "L1_TOP",
           "x1": 74.75,
           "y1": 44.4,
-          "x2": 76.0,
+          "x2": 75.5,
+          "y2": 44.5
+        },
+        {
+          "net": "ADCD0",
+          "layer": "L1_TOP",
+          "x1": 135.1,
+          "y1": 18.0,
+          "x2": 134.5,
+          "y2": 18.0
+        },
+        {
+          "net": "ADCD0",
+          "layer": "L1_TOP",
+          "x1": 75.5,
+          "y1": 44.5,
+          "x2": 75.5,
+          "y2": 18.0
+        },
+        {
+          "net": "ADCD0",
+          "layer": "L1_TOP",
+          "x1": 75.5,
+          "y1": 18.0,
+          "x2": 134.5,
+          "y2": 18.0
+        },
+        {
+          "net": "ADCD0",
+          "layer": "L1_TOP",
+          "x1": 75.0,
+          "y1": 46.0,
+          "x2": 75.0,
+          "y2": 44.5
+        },
+        {
+          "net": "ADCD0",
+          "layer": "L1_TOP",
+          "x1": 75.0,
+          "y1": 44.5,
+          "x2": 75.5,
           "y2": 44.5
         }
       ],
