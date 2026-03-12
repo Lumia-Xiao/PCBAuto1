@@ -1,5 +1,5 @@
 from core.geometry import overlap_area, out_of_bounds_penalty, out_of_region_penalty
-
+from config import MIN_COMPONENT_SPACING
 
 def is_port_component(comp) -> bool:
     ct = str(getattr(comp, "comp_type", "")).upper()
@@ -122,6 +122,47 @@ def overlap_cost_for_component(design, ref: str) -> float:
         total += overlap_area(target, other)
     return total
 
+def _pair_clearance_shortfall(a, b, min_spacing: float) -> float:
+    ax1, ay1, ax2, ay2 = a.bounding_box()
+    bx1, by1, bx2, by2 = b.bounding_box()
+
+    dx = max(0.0, max(bx1 - ax2, ax1 - bx2))
+    dy = max(0.0, max(by1 - ay2, ay1 - by2))
+
+    if dx > 0.0 and dy > 0.0:
+        edge_dist = (dx * dx + dy * dy) ** 0.5
+    else:
+        edge_dist = max(dx, dy)
+
+    return max(0.0, min_spacing - edge_dist)
+
+
+def spacing_cost(design, min_spacing: float = MIN_COMPONENT_SPACING) -> float:
+    comps = [c for c in design.components.values() if is_real_component(c)]
+    total = 0.0
+    for i in range(len(comps)):
+        for j in range(i + 1, len(comps)):
+            shortfall = _pair_clearance_shortfall(comps[i], comps[j], min_spacing)
+            if shortfall > 0.0:
+                total += shortfall * shortfall
+    return total
+
+
+def spacing_cost_for_component(design, ref: str, min_spacing: float = MIN_COMPONENT_SPACING) -> float:
+    target = design.components[ref]
+    if not is_real_component(target):
+        return 0.0
+
+    total = 0.0
+    for other_ref, other in design.components.items():
+        if other_ref == ref:
+            continue
+        if not is_real_component(other):
+            continue
+        shortfall = _pair_clearance_shortfall(target, other, min_spacing)
+        if shortfall > 0.0:
+            total += shortfall * shortfall
+    return total
 
 def boundary_cost(design) -> float:
     total = 0.0

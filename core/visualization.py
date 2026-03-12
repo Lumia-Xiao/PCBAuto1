@@ -76,7 +76,7 @@ def draw_design(design: PCBDesign, title: str = "PCB Placement") -> None:
             )
 
         for via in design.routing_result.vias:
-            ax.plot(via.x, via.y, "o", markersize=3.2, color="#8a2be2", alpha=0.95)
+            ax.plot(via.x, via.y, "o", markersize=5.0, color="#8a2be2", alpha=0.95, zorder=6)
     else:
         for net in design.nets.values():
             pts = [design.components[ref].rotated_pin_position(pin_name) for ref, pin_name in net.connections]

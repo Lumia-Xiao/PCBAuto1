@@ -291,7 +291,7 @@ def main() -> None:
     final_cost_model.report_wirelength()
     final_cost_model.report_wirelength_by_net()
 
-    routing_result = route_design_v1(best_design)
+    routing_result = route_design_v1(best_design, include_ports=True, via_penalty=0.05)
     via_by_net = {}
     for via in routing_result.vias:
         via_by_net[via.net] = via_by_net.get(via.net, 0) + 1

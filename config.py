@@ -1,5 +1,5 @@
 GRID = 0.5  # mm
-
+MIN_COMPONENT_SPACING = 2.0  # mm
 
 def snap_to_grid(v: float, grid: float = GRID) -> float:
     return round(v / grid) * grid

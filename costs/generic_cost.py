@@ -9,6 +9,8 @@ from costs.base_cost import (
     boundary_cost,
     region_cost,
     local_wire_cost_for_component,
+    spacing_cost,
+    spacing_cost_for_component,
 )
 
 
@@ -21,6 +23,7 @@ class GenericPlacementCost:
         self.w_overlap = 7000.0
         self.w_boundary = 1800.0
         self.w_region = 3200.0
+        self.w_spacing = 2600.0
 
     def _is_real_component(self, comp) -> bool:
         return is_real_component(comp)
@@ -46,12 +49,16 @@ class GenericPlacementCost:
     def region_cost(self) -> float:
         return region_cost(self.design)
 
+    def spacing_cost(self) -> float:
+        return spacing_cost(self.design)
+
     def total_cost(self) -> float:
         return (
             self.w_wire * self.net_wire_cost()
             + self.w_overlap * self.overlap_cost()
             + self.w_boundary * self.boundary_cost()
             + self.w_region * self.region_cost()
+            + self.w_spacing * self.spacing_cost()
         )
 
     def local_cost_for_component(self, ref: str) -> float:
@@ -70,6 +77,7 @@ class GenericPlacementCost:
             total += self.w_region * out_of_region_penalty(comp, self.design.region)
 
         total += self.w_wire * local_wire_cost_for_component(self.design, ref)
+        total += self.w_spacing * spacing_cost_for_component(self.design, ref)
         return total
 
     def report_wirelength(self) -> None:

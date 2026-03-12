@@ -11,6 +11,10 @@ LAYER_TOP = "L1_TOP"
 LAYER_BOTTOM = "L4_BOTTOM"
 LAYERS = [LAYER_TOP, LAYER_BOTTOM]
 
+def _is_port_component(comp) -> bool:
+    ct = str(getattr(comp, "comp_type", "")).upper()
+    ref = str(getattr(comp, "ref", "")).upper()
+    return ("PORT" in ct) or ref.startswith("P_") or ref.startswith("PORT_")
 
 def _to_idx(v: float) -> int:
     return int(round(v / GRID))
@@ -20,23 +24,69 @@ def _to_coord(i: int) -> float:
     return snap_to_grid(i * GRID)
 
 
-def _pin_points_for_net(design: PCBDesign, net_name: str) -> List[Tuple[float, float]]:
+def _pin_terminal(comp, pin_name: str) -> Tuple[Tuple[float, float], Tuple[int, int], Tuple[int, int]]:
+    px, py = comp.rotated_pin_position(pin_name)
+    pin_xy = (px, py)
+    pin_idx = (_to_idx(px), _to_idx(py))
+
+    x1, y1, x2, y2 = comp.bounding_box()
+    side_dist = {
+        "left": abs(px - x1),
+        "right": abs(px - x2),
+        "bottom": abs(py - y1),
+        "top": abs(py - y2),
+    }
+    side = min(side_dist, key=side_dist.get)
+
+    # Escape is one grid step outward from the pin in the nearest outward normal
+    # direction. This keeps stub alignment tight to the actual pin geometry.
+    if side == "left":
+        escape = (pin_idx[0] - 1, pin_idx[1])
+    elif side == "right":
+        escape = (pin_idx[0] + 1, pin_idx[1])
+    elif side == "bottom":
+        escape = (pin_idx[0], pin_idx[1] - 1)
+    else:
+        escape = (pin_idx[0], pin_idx[1] + 1)
+
+    if escape == pin_idx:
+        ex, ey = escape
+        if side == "left":
+            escape = (ex - 1, ey)
+        elif side == "right":
+            escape = (ex + 1, ey)
+        elif side == "bottom":
+            escape = (ex, ey - 1)
+        else:
+            escape = (ex, ey + 1)
+
+    return pin_xy, pin_idx, escape
+
+
+def _net_terminals_for_net(
+    design: PCBDesign,
+    net_name: str,
+    include_ports: bool = False,
+) -> List[Tuple[Tuple[int, int], Tuple[int, int]]]:
     net = design.nets[net_name]
-    pts: List[Tuple[float, float]] = []
+    terminals: List[Tuple[Tuple[float, float], Tuple[int, int], Tuple[int, int]]] = []
     seen = set()
     for ref, pin_name in net.connections:
         if ref not in design.components:
             continue
-        p = design.components[ref].rotated_pin_position(pin_name)
-        key = (round(p[0], 6), round(p[1], 6))
+        comp = design.components[ref]
+        if (not include_ports) and _is_port_component(comp):
+            continue
+        pin_xy, pin_idx, esc_idx = _pin_terminal(comp, pin_name)
+        key = (pin_idx, esc_idx)
         if key in seen:
             continue
         seen.add(key)
-        pts.append((snap_to_grid(p[0]), snap_to_grid(p[1])))
-    return pts
+        terminals.append((pin_xy, pin_idx, esc_idx))
+    return terminals
 
 
-def _mst_edges(points: List[Tuple[float, float]]) -> List[Tuple[int, int]]:
+def _mst_edges(points: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
     if len(points) <= 1:
         return []
 
@@ -89,6 +139,52 @@ def _build_component_obstacles(design: PCBDesign, margin: float = 0.2) -> Set[Tu
                 blocked.add((ix, iy))
     return blocked
 
+def _mark_line_cells(occ_layer: Dict[Tuple[int, int], str], net_name: str, a: Tuple[int, int], b: Tuple[int, int]) -> None:
+    x1, y1 = a
+    x2, y2 = b
+    if x1 == x2:
+        step = 1 if y2 >= y1 else -1
+        for y in range(y1, y2 + step, step):
+            owner = occ_layer.get((x1, y))
+            if owner in (None, net_name):
+                occ_layer[(x1, y)] = net_name
+    elif y1 == y2:
+        step = 1 if x2 >= x1 else -1
+        for x in range(x1, x2 + step, step):
+            owner = occ_layer.get((x, y1))
+            if owner in (None, net_name):
+                occ_layer[(x, y1)] = net_name
+
+
+def _add_pin_stub(
+    result: RoutingResult,
+    occ: List[Dict[Tuple[int, int], str]],
+    net_name: str,
+    pin_xy: Tuple[float, float],
+    pin_idx: Tuple[int, int],
+    esc_idx: Tuple[int, int],
+) -> None:
+    if pin_idx == esc_idx:
+        return
+
+    x1, y1 = pin_idx
+    x2, y2 = esc_idx
+    if x1 != x2 and y1 != y2:
+        mid = (x2, y1)
+        result.segments.append(
+            RoutedSegment(net=net_name, layer=LAYER_TOP, x1=pin_xy[0], y1=pin_xy[1], x2=_to_coord(mid[0]), y2=_to_coord(mid[1]))
+        )
+        result.segments.append(
+            RoutedSegment(net=net_name, layer=LAYER_TOP, x1=_to_coord(mid[0]), y1=_to_coord(mid[1]), x2=_to_coord(x2), y2=_to_coord(y2))
+        )
+        _mark_line_cells(occ[0], net_name, pin_idx, mid)
+        _mark_line_cells(occ[0], net_name, mid, esc_idx)
+        return
+
+    result.segments.append(
+        RoutedSegment(net=net_name, layer=LAYER_TOP, x1=pin_xy[0], y1=pin_xy[1], x2=_to_coord(x2), y2=_to_coord(y2))
+    )
+    _mark_line_cells(occ[0], net_name, pin_idx, esc_idx)
 
 def _a_star_route(
     board_w: float,
@@ -98,7 +194,7 @@ def _a_star_route(
     occ: List[Dict[Tuple[int, int], str]],
     net_name: str,
     always_allow: Set[Tuple[int, int]],
-    via_penalty: float = 8.0,
+    via_penalty: float = 0.15,
 ) -> Optional[List[Tuple[int, int, int]]]:
     max_x = _to_idx(board_w)
     max_y = _to_idx(board_h)
@@ -195,10 +291,6 @@ def _path_to_primitives(net_name: str, path: List[Tuple[int, int, int]]) -> Tupl
             px, py = x, y
             continue
 
-        if (x != px and y != py):
-            px, py = x, y
-            continue
-
         dx0, dy0 = px - sx, py - sy
         dx1, dy1 = x - px, y - py
         if (dx0, dy0) != (0, 0) and (dx0 == 0) != (dx1 == 0):
@@ -231,34 +323,50 @@ def _path_to_primitives(net_name: str, path: List[Tuple[int, int, int]]) -> Tupl
     return segments, vias
 
 
-def route_design_v1(design: PCBDesign) -> RoutingResult:
+def route_design_v1(
+    design: PCBDesign,
+    include_ports: bool = False,
+    via_penalty: float = 0.15,
+) -> RoutingResult:
     result = RoutingResult()
 
     comp_blocked = _build_component_obstacles(design)
 
-    # Allow escape around pads so traces can leave components.
-    for comp in design.components.values():
-        for pin_name in comp.pins.keys():
-            px, py = comp.rotated_pin_position(pin_name)
-            ix, iy = _to_idx(px), _to_idx(py)
-            for dx, dy in ((0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)):
-                comp_blocked.discard((ix + dx, iy + dy))
     occ: List[Dict[Tuple[int, int], str]] = [dict(), dict()]
+
+    pin_escape_cells: Set[Tuple[int, int]] = set()
+    for net_name in design.nets.keys():
+        for _, pin_idx, esc_idx in _net_terminals_for_net(design, net_name, include_ports=include_ports):
+            pin_escape_cells.add(pin_idx)
+            pin_escape_cells.add(esc_idx)
+
+    for cell in pin_escape_cells:
+        comp_blocked.discard(cell)
+
     for xy in comp_blocked:
         occ[0][xy] = "__BLOCKED__"
         occ[1][xy] = "__BLOCKED__"
 
     for net_name in design.nets.keys():
-        points = _pin_points_for_net(design, net_name)
-        if len(points) < 2:
+        terminals = _net_terminals_for_net(design, net_name, include_ports=include_ports)
+        if len(terminals) < 2:
             result.routed_nets[net_name] = True
             continue
+
+        # Backward-compatible aliases: earlier revisions used points / points_idx names.
+        escape_points = [esc for _, _, esc in terminals]
+        points = escape_points
+        points_idx = points
+        always_allow = set(points_idx)
+
+        for pin_xy, pin_idx, esc_idx in terminals:
+            _add_pin_stub(result, occ, net_name, pin_xy, pin_idx, esc_idx)
 
         points_idx = [(_to_idx(x), _to_idx(y)) for x, y in points]
         always_allow = set(points_idx)
 
         ok = True
-        for u, v in _mst_edges(points):
+        for u, v in _mst_edges(points_idx):
             start = points_idx[u]
             goal = points_idx[v]
             path = _a_star_route(
@@ -269,6 +377,7 @@ def route_design_v1(design: PCBDesign) -> RoutingResult:
                 occ=occ,
                 net_name=net_name,
                 always_allow=always_allow,
+                via_penalty=via_penalty,
             )
             if path is None:
                 ok = False
