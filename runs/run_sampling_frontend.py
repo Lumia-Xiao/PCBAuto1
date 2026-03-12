@@ -5,6 +5,8 @@ from core.compaction import progressive_compaction
 from core.visualization import draw_design
 from core.layout_utils import get_layout_bbox
 from core.annealer import SimulatedAnnealer
+from core.routing import route_design_v1, export_routing_result_json
+from pathlib import Path
 from rules.constraints import Constraints
 from rules.sampling_rules import build_sampling_frontend_rules
 
@@ -148,11 +150,11 @@ def run_one_seed(u9_x, u9_y, dx, show_plot=False):
     progressive_compaction(
         design,
         cost_model=cost_model,
-        x_loops=16,
-        y_loops=12,
+        x_loops=3,
+        y_loops=3,
         shrink_step_x=3.5,
         shrink_step_y=2.0,
-        inner_iterations=6000,
+        inner_iterations=1000,
     )
 
     # Step 2: V4 annealing with generic constraints + rules-based cost
@@ -165,10 +167,10 @@ def run_one_seed(u9_x, u9_y, dx, show_plot=False):
     )
 
     annealer.optimize(
-        iterations=4000,
+        iterations=900,
         t_start=20.0,
         t_end=0.05,
-        verbose_interval=1000,
+        verbose_interval=300,
         use_incremental=False,
         fine_mode=True,
     )
@@ -222,8 +224,8 @@ def main() -> None:
     print("GRID =", GRID, "mm")
 
     x0 = 60.0
-    y_candidates = [45.0, 47.0]
-    dx_candidates = [8.0, 10.0, 12.0, 14.0]
+    y_candidates = [45.0]
+    dx_candidates = [10.0]
 
     best_design = None
     best_metrics = None
@@ -289,8 +291,23 @@ def main() -> None:
     final_cost_model.report_wirelength()
     final_cost_model.report_wirelength_by_net()
 
-    draw_design(best_design, "Optimized Placement - Best Seed Sweep Layout")
+    routing_result = route_design_v1(best_design)
+    via_by_net = {}
+    for via in routing_result.vias:
+        via_by_net[via.net] = via_by_net.get(via.net, 0) + 1
 
+    print("\n===== Routed Result (V1) =====")
+    print("Total vias:", len(routing_result.vias))
+    for net_name in sorted(best_design.nets.keys()):
+        print(f"{net_name:>16s} : vias = {via_by_net.get(net_name, 0)}")
+
+    export_path = Path(__file__).resolve().parent / "routing_result_v1.json"
+    export_path.parent.mkdir(parents=True, exist_ok=True)
+    export_routing_result_json(best_design, str(export_path))
+    print("Routing file written:", export_path)
+    print("Routing file exists:", export_path.exists())
+
+    draw_design(best_design, "Optimized Placement - Best Seed Sweep Layout")
 
 if __name__ == "__main__":
     main()

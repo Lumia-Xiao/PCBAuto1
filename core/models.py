@@ -82,6 +82,31 @@ class Board:
     width: float
     height: float
 
+@dataclass
+class RoutedSegment:
+    net: str
+    layer: str
+    x1: float
+    y1: float
+    x2: float
+    y2: float
+
+
+@dataclass
+class Via:
+    net: str
+    x: float
+    y: float
+    from_layer: str
+    to_layer: str
+
+
+@dataclass
+class RoutingResult:
+    segments: List[RoutedSegment] = field(default_factory=list)
+    vias: List[Via] = field(default_factory=list)
+    routed_nets: Dict[str, bool] = field(default_factory=dict)
+
 
 @dataclass
 class PlacementRegion:
@@ -105,6 +130,7 @@ class PCBDesign:
     components: Dict[str, Component] = field(default_factory=dict)
     nets: Dict[str, Net] = field(default_factory=dict)
     region: Optional[PlacementRegion] = None
+    routing_result: Optional[RoutingResult] = None
 
     def assign_pin_nets(self) -> None:
         for net in self.nets.values():

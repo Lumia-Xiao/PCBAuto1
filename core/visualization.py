@@ -60,12 +60,30 @@ def draw_design(design: PCBDesign, title: str = "PCB Placement") -> None:
             px, py = comp.rotated_pin_position(pin_name)
             ax.plot(px, py, "ko", markersize=2.2)
 
-    for net in design.nets.values():
-        pts = [design.components[ref].rotated_pin_position(pin_name) for ref, pin_name in net.connections]
-        if len(pts) >= 2:
-            p0 = pts[0]
-            for p in pts[1:]:
-                ax.plot([p0[0], p[0]], [p0[1], p[1]], "--", linewidth=0.8, alpha=0.35)
+    if design.routing_result is not None and design.routing_result.segments:
+        layer_colors = {
+            "L1_TOP": "#1f77b4",
+            "L4_BOTTOM": "#d62728",
+        }
+        for seg in design.routing_result.segments:
+            ax.plot(
+                [seg.x1, seg.x2],
+                [seg.y1, seg.y2],
+                "-",
+                linewidth=1.4,
+                alpha=0.85,
+                color=layer_colors.get(seg.layer, "#555555"),
+            )
+
+        for via in design.routing_result.vias:
+            ax.plot(via.x, via.y, "o", markersize=3.2, color="#8a2be2", alpha=0.95)
+    else:
+        for net in design.nets.values():
+            pts = [design.components[ref].rotated_pin_position(pin_name) for ref, pin_name in net.connections]
+            if len(pts) >= 2:
+                p0 = pts[0]
+                for p in pts[1:]:
+                    ax.plot([p0[0], p[0]], [p0[1], p[1]], "--", linewidth=0.8, alpha=0.35)
 
     for y, label in [(72, "CH1"), (55, "CH2"), (36, "CH3"), (18, "CH4")]:
         ax.plot([0, design.board.width], [y, y], ":", linewidth=0.8, color="gray", alpha=0.25)
