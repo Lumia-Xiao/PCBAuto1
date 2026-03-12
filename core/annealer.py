@@ -21,6 +21,7 @@ class SimulatedAnnealer:
         self.design = design
         self.cost_model = cost_model
         self.constraints = constraints or Constraints()
+        self._movable_components: Optional[List[Component]] = None
         random.seed(seed)
 
     def snapshot(self) -> Dict[str, Tuple[float, float, int]]:
@@ -37,10 +38,12 @@ class SimulatedAnnealer:
             comp.rotation = snap_angle(rot)
 
     def movable_components(self) -> List[Component]:
-        return [
-            c for c in self.design.components.values()
-            if self.constraints.is_movable(c)
-        ]
+        if self._movable_components is None:
+            self._movable_components = [
+                c for c in self.design.components.values()
+                if self.constraints.is_movable(c)
+            ]
+        return self._movable_components
 
     def pick_movable_component(self) -> Component:
         movable = self.movable_components()
@@ -111,7 +114,7 @@ class SimulatedAnnealer:
             t = t_start * ((t_end / t_start) ** (step / max(1, iterations - 1)))
 
             comp = self.pick_movable_component()
-            old_state = self.snapshot()
+            old_state = (comp.x, comp.y, comp.rotation)
             old_cost = current_cost
 
             old_local_cost: Optional[float] = None
@@ -141,7 +144,9 @@ class SimulatedAnnealer:
                     best_cost = new_cost
                     best_state = self.snapshot()
             else:
-                self.restore(old_state)
+                comp.x = snap_to_grid(old_state[0])
+                comp.y = snap_to_grid(old_state[1])
+                comp.rotation = snap_angle(old_state[2])
                 current_cost = old_cost
 
             if verbose_interval > 0 and (step + 1) % verbose_interval == 0:
