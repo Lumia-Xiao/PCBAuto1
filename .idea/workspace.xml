@@ -7,7 +7,6 @@
     <list default="true" id="e83c5f20-2736-4a63-8058-2a32656eb431" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/routing.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/routing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/routing_result_v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/runs/routing_result_v1.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

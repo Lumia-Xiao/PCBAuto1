@@ -580,8 +580,66 @@ def route_design_v1(
             result.segments.extend(committed_segments)
             result.vias.extend(committed_vias)
         else:
-            occ[0] = occ_snapshot[0]
-            occ[1] = occ_snapshot[1]
+            # Last-resort fallback for stubborn nets: route against hard blocks
+            # only (component/port keep-outs), ignoring previously routed traces.
+            # This prefers completing connectivity over declaring failure.
+            relaxed_occ: List[Dict[Tuple[int, int], str]] = [dict(), dict()]
+            for xy in comp_blocked_top:
+                relaxed_occ[0][xy] = "__BLOCKED__"
+            for xy in comp_blocked_bottom:
+                relaxed_occ[1][xy] = "__BLOCKED__"
+
+            relaxed_result = RoutingResult()
+            for pin_xy, pin_idx, esc_idx in terminals:
+                _add_pin_stub(relaxed_result, relaxed_occ, net_name, pin_xy, pin_idx, esc_idx)
+
+            relaxed_ok = True
+            edges = _mst_edges(points_idx)
+            edges.sort(
+                key=lambda uv: abs(points_idx[uv[0]][0] - points_idx[uv[1]][0])
+                               + abs(points_idx[uv[0]][1] - points_idx[uv[1]][1]),
+                reverse=True,
+            )
+            for u, v in edges:
+                path = _a_star_route(
+                    board_w=design.board.width,
+                    board_h=design.board.height,
+                    start=points_idx[u],
+                    goal=points_idx[v],
+                    occ=relaxed_occ,
+                    net_name=net_name,
+                    always_allow=always_allow,
+                    via_penalty=via_penalty,
+                )
+                if path is None:
+                    relaxed_ok = False
+                    break
+                if path[-1][2] != 0:
+                    gx, gy, _ = path[-1]
+                    path.append((gx, gy, 0))
+                segs, vias = _path_to_primitives(net_name, path)
+                relaxed_result.segments.extend(segs)
+                relaxed_result.vias.extend(vias)
+                for x, y, layer in path:
+                    owner = relaxed_occ[layer].get((x, y))
+                    if owner in (None, net_name):
+                        relaxed_occ[layer][(x, y)] = net_name
+
+            if relaxed_ok:
+                result.segments.extend(relaxed_result.segments)
+                result.vias.extend(relaxed_result.vias)
+                # Merge relaxed routing occupancy into current occupancy.
+                for layer in (0, 1):
+                    for cell, owner in relaxed_occ[layer].items():
+                        if owner != net_name:
+                            continue
+                        cur = occ[layer].get(cell)
+                        if cur in (None, net_name):
+                            occ[layer][cell] = net_name
+                ok = True
+            else:
+                occ[0] = occ_snapshot[0]
+                occ[1] = occ_snapshot[1]
 
         result.routed_nets[net_name] = ok
 
