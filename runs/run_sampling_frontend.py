@@ -152,7 +152,7 @@ def run_one_seed(u9_x, u9_y, dx, show_plot=False):
         cost_model=cost_model,
         x_loops=3,
         y_loops=3,
-        shrink_step_x=3.5,
+        shrink_step_x=2.0,
         shrink_step_y=2.0,
         inner_iterations=1000,
     )
